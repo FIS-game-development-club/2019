@@ -7351,7 +7351,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1267772783418818, guid: bc58f621888644a3f875a67c6ea35056, type: 2}
   objectLocation: {fileID: 701832345}
-  bulletSpeed: 1000
 --- !u!1 &906491753
 GameObject:
   m_ObjectHideFlags: 0
