@@ -15,17 +15,13 @@ public class PlayerMove : MonoBehaviour {
 		jumptime = jumpdelay;
 	}
 
-	void OnCollisionEnter2D(Collision2D c){
-		if(c.gameObject.tag == "collider"){
-			collide = true;
-		}
-	}
-
-	void OnCollisionExit2D(Collision2D c){
-		if(c.gameObject.tag == "collider"){
+	void OnTriggerExit2D(Collider2D c){
 			collide = false;
 			jumptime = Time.time;
-		}
+	}
+
+	void OnTriggerEnter2D(Collider2D c){
+			collide = true;
 	}
 
 	void FixedUpdate () {
