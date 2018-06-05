@@ -4,8 +4,8 @@
 Physics2DSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 3
-  m_Gravity: {x: 0, y: -9.81}
-  m_DefaultMaterial: {fileID: 0}
+  m_Gravity: {x: 0, y: -10}
+  m_DefaultMaterial: {fileID: 6200000, guid: cc95f0a58fd6b42249020bc64e55d924, type: 2}
   m_VelocityIterations: 8
   m_PositionIterations: 3
   m_VelocityThreshold: 1
@@ -22,7 +22,7 @@ Physics2DSettings:
   m_AutoSimulation: 1
   m_QueriesHitTriggers: 1
   m_QueriesStartInColliders: 1
-  m_ChangeStopsCallbacks: 0
+  m_ChangeStopsCallbacks: 1
   m_CallbacksOnDisable: 1
   m_AutoSyncTransforms: 1
   m_AlwaysShowColliders: 0
