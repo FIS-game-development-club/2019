@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class PlayerMove : MonoBehaviour {
 	public float speed;
 	public float jumpPower;
 	public float jumpdelay;
@@ -30,12 +30,12 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate () {
 		if(Input.GetKey(KeyCode.D)){
-			if(collide || Time.time - jumptime < jumpdelay * 2.5){
+			if(collide || Time.time - jumptime < jumpdelay * 2){
 				rb.AddForce(Vector2.right * speed, ForceMode2D.Impulse);
 			}
 		}
 		if(Input.GetKey(KeyCode.A)){
-			if(collide || Time.time - jumptime < jumpdelay * 2.5){
+			if(collide || Time.time - jumptime < jumpdelay * 2){
 				rb.AddForce(Vector2.left * speed, ForceMode2D.Impulse);
 			}
 		}
