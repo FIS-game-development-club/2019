@@ -40,7 +40,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-		if(Input.GetKey(KeyCode.Space)){
+        if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)){
 			if(collide || Time.time - jumptime < jumpdelay){
 				rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
 			}
