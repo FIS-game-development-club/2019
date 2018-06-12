@@ -18,11 +18,14 @@ public class PlayerMove : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D c){
 			collide = false;
 			jumptime = Time.time;
+			Debug.Log("not colliding");
 	}
 
 	void OnTriggerEnter2D(Collider2D c){
 			collide = true;
+			Debug.Log("colliding");
 	}
+
 
 	void FixedUpdate () {
 		if(Input.GetKey(KeyCode.D)){
