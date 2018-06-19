@@ -6,10 +6,11 @@ public class Shooting : MonoBehaviour {
 
 	public GameObject bullet;
 	private Transform objectLocation;
+	public GameObject instantiateLocation;
 
 
 	void Start() {
-		objectLocation = gameObject.transform;
+		objectLocation = instantiateLocation.transform;
 		
 	}
 		
@@ -17,7 +18,7 @@ public class Shooting : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Fire1")) {
+		if (Input.GetButton("Fire1")) {
 			Instantiate(bullet, objectLocation.position, objectLocation.rotation);	
 		}
 	}

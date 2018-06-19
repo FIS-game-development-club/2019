@@ -7,13 +7,12 @@ public class MoveBullet : MonoBehaviour {
 	public float bulletSpeed;
 
 	private Rigidbody2D bulletRb;
-	
-	void Awake() {
-		bulletRb = gameObject.GetComponent<Rigidbody2D>();
+
+	void OnTriggerEnter2D(Collider2D c) {
+		Destroy(gameObject);
 	}
 
-	// Update is called once per frame
-	void Start () {
-		bulletRb.AddForce(Vector2.right * bulletSpeed, ForceMode2D.Impulse);
+	void FixedUpdate () {
+		transform.Translate(Vector2.right * Time.deltaTime * bulletSpeed);
 	}
 }
