@@ -8,7 +8,7 @@ public class MoveBullet : MonoBehaviour {
 
 	private Rigidbody2D bulletRb;
 
-	void OnTriggerEnter2D(Collider2D c) {
+	void OnCollisionEnter2D(Collision2D c) {
 		Destroy(gameObject);
 	}
 

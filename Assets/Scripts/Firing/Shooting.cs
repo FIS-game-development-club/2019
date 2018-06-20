@@ -14,11 +14,8 @@ public class Shooting : MonoBehaviour {
 		
 	}
 		
- 
-
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetButton("Fire1")) {
+ 	void Update () {
+		if (Input.GetButtonDown("Fire1")) {
 			Instantiate(bullet, objectLocation.position, objectLocation.rotation);	
 		}
 	}
