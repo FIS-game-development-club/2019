@@ -5,11 +5,12 @@ using UnityEngine;
 public class Shooting : MonoBehaviour {
 
 	public GameObject bullet;
-	public Transform objectLocation;
+	private Transform objectLocation;
+	public GameObject instantiateLocation;
 
 
 	void Start() {
-		objectLocation = gameObject.transform;
+		objectLocation = instantiateLocation.transform;
 		
 	}
 		
@@ -17,9 +18,8 @@ public class Shooting : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Fire1")) {
-			Instantiate(bullet, objectLocation.position, objectLocation.rotation);
-			
+		if (Input.GetButton("Fire1")) {
+			Instantiate(bullet, objectLocation.position, objectLocation.rotation);	
 		}
 	}
 }
