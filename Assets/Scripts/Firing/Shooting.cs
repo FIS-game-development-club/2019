@@ -7,19 +7,26 @@ public class Shooting : MonoBehaviour {
 	public GameObject bullet;
 	private Transform objectLocation;
 	public GameObject instantiateLocation;
+	public GameObject instantiateLocation2;
+	private SpriteRenderer sprite;
+
 
 
 	void Start() {
-		objectLocation = instantiateLocation.transform;
-		
+		sprite = gameObject.GetComponent<SpriteRenderer>();
 	}
 		
- 
+ 	void Update () {
+		if (Input.GetButtonDown("Fire1")) {
 
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetButton("Fire1")) {
-			Instantiate(bullet, objectLocation.position, objectLocation.rotation);	
+		if(!sprite.flipY){
+			objectLocation = instantiateLocation.transform;
+		}
+
+		else{
+			objectLocation = instantiateLocation2.transform;
+		}
+			Instantiate(Resources.Load("Bullet"), objectLocation.position, objectLocation.rotation);	
 		}
 	}
 }
