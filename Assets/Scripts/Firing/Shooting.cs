@@ -5,21 +5,28 @@ using UnityEngine;
 public class Shooting : MonoBehaviour {
 
 	public GameObject bullet;
-	public Transform objectLocation;
+	private Transform objectLocation;
+	public GameObject instantiateLocation;
+	public GameObject instantiateLocation2;
+	private SpriteRenderer sprite;
+
 
 
 	void Start() {
-		objectLocation = gameObject.transform;
-		
+		sprite = gameObject.GetComponent<SpriteRenderer>();
 	}
 		
- 
-
-	// Update is called once per frame
-	void Update () {
+ 	void Update () {
 		if (Input.GetButtonDown("Fire1")) {
-			Instantiate(bullet, objectLocation.position, objectLocation.rotation);
-			
+
+		if(!sprite.flipY){
+			objectLocation = instantiateLocation.transform;
+		}
+
+		else{
+			objectLocation = instantiateLocation2.transform;
+		}
+			Instantiate(Resources.Load("Bullet"), objectLocation.position, objectLocation.rotation);	
 		}
 	}
 }
