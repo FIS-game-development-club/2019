@@ -26,7 +26,7 @@ public class Shooting : MonoBehaviour {
 		else{
 			objectLocation = instantiateLocation2.transform;
 		}
-			Instantiate(bullet, objectLocation.position, objectLocation.rotation);	
+			Instantiate(Resources.Load("Bullet"), objectLocation.position, objectLocation.rotation);	
 		}
 	}
 }
