@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour {
 
-	Collider col;
-	//create variable for collider
+    private bool collide = false;
+    private  int colliderY;
+    private int colliderX;
 
-	void Start () {
-		col = gameObject.GetComponent<
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+    void Start (){
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D c)
+    {
+        if (c.tag == "player"){
+            collide = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D c)
+    {
+        if (c.tag == "player")
+        {
+            collide = false;
+        }
+    }
+
+    void Update () {
+        if(collide){
+            
+        }
 	}
 }
