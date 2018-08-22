@@ -1,12 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMove : MonoBehaviour {
 
     private bool collide = false;
-    private  int colliderY;
-    private int colliderX;
     private GameObject player;
     public float speed;
 
@@ -33,19 +31,19 @@ public class CameraMove : MonoBehaviour {
         if(collide){
             if (player.transform.position.x > transform.position.x)
             {
-                transform.Translate(Vector2.right * ((float)(player.transform.position.x - transform.position.x - colliderX)) * speed);
+                transform.Translate(Vector2.right * ((float)(player.transform.position.x - transform.position.x)) * speed);
             }
             if (player.transform.position.x < transform.position.x)
             {
-                transform.Translate(Vector2.left * ((float)(transform.position.x - colliderX - player.transform.position.x)) * speed);
+                transform.Translate(Vector2.left * ((float)(transform.position.x - player.transform.position.x)) * speed);
             }
             if (player.transform.position.y > transform.position.y)
             {
-                transform.Translate(Vector2.up * ((float)(player.transform.position.y - transform.position.y - colliderY)) * speed);
+                transform.Translate(Vector2.up * ((float)(player.transform.position.y - transform.position.y )) * speed);
             }
             if (player.transform.position.y < transform.position.y)
             {
-                transform.Translate(Vector2.down * ((float)(transform.position.y - colliderY - player.transform.position.y)) * speed);
+                transform.Translate(Vector2.down * ((float)(transform.position.y - player.transform.position.y)) * speed);
             }
         }
 	}
