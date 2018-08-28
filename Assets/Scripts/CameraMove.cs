@@ -27,7 +27,7 @@ public class CameraMove : MonoBehaviour {
         }
     }
 
-    void Update () {
+    void FixedUpdate () {
         if(collide){
             if (player.transform.position.x > transform.position.x)
             {

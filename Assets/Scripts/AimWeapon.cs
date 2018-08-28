@@ -21,6 +21,7 @@ public class AimWeapon : MonoBehaviour {
 			mousePosition.x - transform.position.x,
 			mousePosition.y - transform.position.y
 		);
+
 		parentSprite.flipX = (mousePosition.x < transform.position.x);
 		weaponSprite.flipY = (mousePosition.x < transform.position.x);
 		transform.right = direction;
