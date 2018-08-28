@@ -16,12 +16,18 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D c){
-			collide = false;
-			jumptime = Time.time;
+        if (c.tag != "MainCamera")
+        {
+            collide = false;
+            jumptime = Time.time;
+        }
 	}
 
 	void OnTriggerEnter2D(Collider2D c){
-			collide = true;
+        if (c.tag != "MainCamera")
+        {
+            collide = true;
+        }
 	}
 
 

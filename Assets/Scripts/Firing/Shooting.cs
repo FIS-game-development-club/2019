@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour {
 
-	public GameObject bullet;
 	private Transform objectLocation;
 	public GameObject instantiateLocation;
 	public GameObject instantiateLocation2;
