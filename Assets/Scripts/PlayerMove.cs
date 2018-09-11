@@ -10,9 +10,12 @@ public class PlayerMove : MonoBehaviour {
 	private Rigidbody2D rb;
 	private bool collide = false;
 	
+	PlayerStats data;
+
 	void Start(){
 		rb = gameObject.GetComponent<Rigidbody2D>();
 		jumptime = jumpdelay;
+		data = gameObject.GetComponent<PlayerStats>();
 	}
 
 	void OnTriggerExit2D(Collider2D c){
