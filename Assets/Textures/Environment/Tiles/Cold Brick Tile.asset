@@ -3,15 +3,15 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: WaterTile
+  m_Name: Cold Brick Tile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: da15c1cea66c6407fac4fc91d3baae2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16ad3a4e270aa4a27bf9f4a92ba64090, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
