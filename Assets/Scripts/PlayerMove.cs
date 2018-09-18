@@ -25,7 +25,8 @@ public class PlayerMove : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddForce(Vector2.right * speed);
+            print("yeet");
+            rb.AddForce(new Vector2(speed, 0.0f), ForceMode2D.Impulse);
         }
     }
 }
