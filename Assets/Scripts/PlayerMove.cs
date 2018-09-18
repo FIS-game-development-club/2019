@@ -4,29 +4,52 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
     public float speed;
+    private bool touching;
+    private float jumptime;
+    public float AirTime;
+
 
 	void Start () {
         rb = gameObject.GetComponent<Rigidbody2D>();
 	}
-	
-	void FixedUpdate () {
+
+    private void OnTriggerEnter2D(Collider2D c)
+    {
+        if (c.tag == "collider")
+        {
+            touching = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D c)
+    {
+        if(c.tag == "collider"){
+            touching = false;
+        }
+        jumptime = Time.time;
+    }
+
+
+    void FixedUpdate () {
 		
         if(Input.GetKey(KeyCode.Space))
         {
-
+            if (touching )
+            {
+                rb.AddForce(new Vector2(0f, speed / 4), ForceMode2D.Impulse);
+            }
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-
+            rb.AddForce(new Vector2(-speed, 0f), ForceMode2D.Impulse);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            print("yeet");
-            rb.AddForce(new Vector2(speed, 0.0f), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(speed, 0f), ForceMode2D.Impulse);
         }
     }
 }
