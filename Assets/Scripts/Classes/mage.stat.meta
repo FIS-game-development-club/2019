@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Classes/mage.stat.meta
 guid: 5ffb6a0cdaf934adb90c3b5ee85a8647
+=======
+guid: 88a95a25618b140229b815654ce90460
+>>>>>>> 3ff5cc985a26ca8f6a638ce449bea17f2b34e984:Assets/Scripts/Classes/mage.stat.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
