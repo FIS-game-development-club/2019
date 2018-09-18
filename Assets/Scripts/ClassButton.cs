@@ -11,7 +11,7 @@ public class ClassButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		cls = classes.GetType().GetField(className).GetValue(classes);
+        cls = (GameClass)(classes.GetType().GetField(className).GetValue(classes));
 	}
 	
 	// Update is called once per frame
