@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 public class GameClass {
 
     public string name;
