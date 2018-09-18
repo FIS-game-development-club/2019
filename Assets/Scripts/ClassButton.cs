@@ -11,7 +11,7 @@ public class ClassButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		cls = classes.GetField(className)
+        cls = classes.GetField(className);
 	}
 	
 	// Update is called once per frame
@@ -21,6 +21,6 @@ public class ClassButton : MonoBehaviour {
 
 	void TaskOnClick () {
 		playerData.cls = cls;
-		playerData.stats = cls.baseStats
+        playerData.stats = cls.baseStats;
 	}
 }
