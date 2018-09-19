@@ -15,8 +15,8 @@ public class Shooting : MonoBehaviour {
 		sprite = gameObject.GetComponent<SpriteRenderer>();
 	}
 		
- 	void Update () {
-		if (Input.GetButtonDown("Fire1")) {
+ 	void FixedUpdate () {
+		if (Input.GetButtonDown("Fire")) {
 
 		if(!sprite.flipY){
 			objectLocation = instantiateLocation.transform;
