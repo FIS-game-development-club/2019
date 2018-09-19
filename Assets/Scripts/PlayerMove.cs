@@ -10,35 +10,37 @@ public class PlayerMove : MonoBehaviour {
     private float jumptime;
     public float AirTime;
 
-
 	void Start () {
         rb = gameObject.GetComponent<Rigidbody2D>();
-	}
+        jumptime = 0;
+        touching = true;
+    }
 
-    private void OnTriggerEnter2D(Collider2D c)
+    public void OnTriggerEnter2D(Collider2D c)
     {
-        if (c.tag == "collider")
+        if (c.gameObject.tag == "collider")
         {
             touching = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D c)
+    public void OnTriggerExit2D(Collider2D c)
     {
-        if(c.tag == "collider"){
+        if (c.gameObject.tag == "collider"){
             touching = false;
         }
-        jumptime = Time.time;
     }
 
 
     void FixedUpdate () {
-		
         if(Input.GetKey(KeyCode.Space))
         {
-            if (touching )
+            if (touching || AirTime >= Time.time - jumptime)
             {
-                rb.AddForce(new Vector2(0f, speed / 4), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0f, 3.5f), ForceMode2D.Impulse);
+                if (touching){
+                    jumptime = Time.time;
+                }
             }
         }
 
