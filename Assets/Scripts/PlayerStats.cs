@@ -8,9 +8,16 @@ public class PlayerStats : MonoBehaviour {
     public GameClass cls;
     public StatSet stats;
 
+    void Awake() {
+       DontDestroyOnLoad(this.gameObject); 
+    }
+
     void Start() {
         cls = classes.rogue;
-        print(cls);
         stats = cls.baseStats;
+    }
+
+    void Update() {
+        print(stats.maxHealth);
     }
 }

@@ -1,10 +1,10 @@
 public class StatSet {
 
-    float maxHealth;
-    float maxMana;
-    float stealth;
-    float strength;
-    float speed;
+    public float maxHealth;
+    public float maxMana;
+    public float stealth;
+    public float strength;
+    public float speed;
 
     public StatSet (float _maxHealth, float _maxMana, float _stealth, float _strength, float _speed) {
         maxHealth = _maxHealth;

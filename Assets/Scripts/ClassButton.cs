@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ClassButton : MonoBehaviour {
 
@@ -23,5 +24,6 @@ public class ClassButton : MonoBehaviour {
 		playerData.cls = cls;
 		playerData.stats = cls.baseStats;
 		print(playerData);
+		SceneManager.LoadScene("test scene bullet", LoadSceneMode.Single);
 	}
 }
