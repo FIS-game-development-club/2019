@@ -9,8 +9,6 @@ public class PlayerMove : MonoBehaviour {
     private bool touching;
     private float jumptime;
     private const float AirTime = 0.2f;
-    private const float jumpDelay = 0.1f;
-    private float landTime;
     private bool spaceAllowed = false;
     private bool spaceLast = false;
 
@@ -25,7 +23,6 @@ public class PlayerMove : MonoBehaviour {
         if (c.gameObject.tag == "collider")
         {
             touching = true;
-            landTime = Time.time;
         }
     }
 
@@ -38,6 +35,7 @@ public class PlayerMove : MonoBehaviour {
 
 
     void FixedUpdate () {
+
         if (touching)
         {
             spaceAllowed = !spaceLast;
