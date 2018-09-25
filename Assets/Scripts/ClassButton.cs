@@ -19,8 +19,9 @@ public class ClassButton : MonoBehaviour {
 		
 	}
 
-	void TaskOnClick () {
+	public void TaskOnClick () {
 		playerData.cls = cls;
 		playerData.stats = cls.baseStats;
+		print(playerData);
 	}
 }
