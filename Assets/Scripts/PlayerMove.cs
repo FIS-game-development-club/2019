@@ -8,7 +8,11 @@ public class PlayerMove : MonoBehaviour {
     public float speed;
     private bool touching;
     private float jumptime;
-    public float AirTime;
+    private const float AirTime = 0.2f;
+    private const float jumpDelay = 0.1f;
+    private float landTime;
+    private bool spaceAllowed = false;
+    private bool spaceLast = false;
 
 	void Start () {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -21,6 +25,7 @@ public class PlayerMove : MonoBehaviour {
         if (c.gameObject.tag == "collider")
         {
             touching = true;
+            landTime = Time.time;
         }
     }
 
@@ -33,13 +38,21 @@ public class PlayerMove : MonoBehaviour {
 
 
     void FixedUpdate () {
-        if(Input.GetKey(KeyCode.Space))
+        if (touching)
         {
-            if (touching || AirTime >= Time.time - jumptime)
+            spaceAllowed = !spaceLast;
+            spaceLast = Input.GetKey(KeyCode.Space);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+
+            if ((touching || AirTime >= Time.time - jumptime) && spaceAllowed)
             {
                 rb.AddForce(new Vector2(0f, 3.5f), ForceMode2D.Impulse);
                 if (touching){
                     jumptime = Time.time;
+
                 }
             }
         }
