@@ -50,18 +50,18 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176847841672444}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.001
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &61531904642103024
 BoxCollider2D:
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d13add47fbb475294a62efc7de438f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 0.001
+  bulletSpeed: 7.5
   ShotBy: {fileID: 0}
 --- !u!212 &212855825255403660
 SpriteRenderer:
