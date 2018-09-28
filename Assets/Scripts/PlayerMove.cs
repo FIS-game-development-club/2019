@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour {
     public float speed;
     private bool touching;
     private float jumptime;
-    private const float AirTime = 0.2f;
+    private const float AirTime = 0.16f;
     private bool spaceAllowed = false;
     private bool spaceLast = false;
 
@@ -47,7 +47,7 @@ public class PlayerMove : MonoBehaviour {
 
             if ((touching || AirTime >= Time.time - jumptime) && spaceAllowed)
             {
-                rb.AddForce(new Vector2(0f, 3.5f), ForceMode2D.Impulse);
+                rb.AddForce(new Vector2(0f, 4f), ForceMode2D.Impulse);
                 if (touching){
                     jumptime = Time.time;
 
