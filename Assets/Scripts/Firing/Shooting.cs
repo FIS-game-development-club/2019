@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour {
 	public GameObject instantiateLocation;
 	public GameObject instantiateLocation2;
 	private SpriteRenderer sprite;
+    private float prevX;
 
 
 
@@ -18,14 +19,19 @@ public class Shooting : MonoBehaviour {
  	void FixedUpdate () {
 		if (Input.GetButtonDown("Fire")) {
 
-		if(!sprite.flipY){
-			objectLocation = instantiateLocation.transform;
-		}
+		    if(!sprite.flipY){
+		        objectLocation = instantiateLocation.transform;
+		    }
 
-		else{
-			objectLocation = instantiateLocation2.transform;
+	        else{
+			    objectLocation = instantiateLocation2.transform;
+		    }
+
+            MoveBullet obj = (Instantiate(Resources.Load("Bullet"), objectLocation.position, objectLocation.rotation) as GameObject).GetComponent<MoveBullet>();
+            obj.bulletSpeed += (transform.position.x - prevX) * 10;
+            obj.ShotBy = transform.root.gameObject;
+
 		}
-			Instantiate(Resources.Load("Bullet"), objectLocation.position, objectLocation.rotation);	
-		}
+        prevX = transform.position.x;
 	}
 }
